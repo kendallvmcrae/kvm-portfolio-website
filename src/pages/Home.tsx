@@ -74,7 +74,15 @@ export function Home({ onNavigate, onViewProject }: HomeProps) {
                 className="bg-stone-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
                 onClick={() => handleViewProject(project.id)}
               >
-                <div className="h-48 bg-gradient-to-br from-terracotta-100 to-terracotta-200"></div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-48 w-full object-cover"
+                  />
+                ) : (
+                  <div className="h-48 bg-gradient-to-br from-terracotta-100 to-terracotta-200"></div>
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-stone-900 mb-2">
                     {project.title}

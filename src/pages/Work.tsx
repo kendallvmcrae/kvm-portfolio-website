@@ -20,7 +20,7 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
             My Work
           </h1>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-            A collection of relevant projects that demonstrate my 
+            A collection of relevant projects that demonstrate my
             research philosophy and approach to solving complex challenges in a variety of ecosystems.
           </p>
         </div>
@@ -33,7 +33,15 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
               onClick={() => handleViewProject(project.id)}
             >
-              <div className="h-48 bg-gradient-to-br from-terracotta-100 to-terracotta-200"></div>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-48 w-full object-cover"
+                />
+              ) : (
+                <div className="h-48 bg-gradient-to-br from-terracotta-100 to-terracotta-200"></div>
+              )}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-stone-900 mb-2">
                   {project.title}

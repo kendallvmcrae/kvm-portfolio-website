@@ -2,11 +2,12 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  image?: string;
+  imageDescription?: string;
   role: string;
   duration: string;
   team: string;
   tags: string[];
-  image?: string;
   challenge: string;
   approach: string;
   methods: string[];
@@ -19,6 +20,7 @@ export const projects: Project[] = [
     id: "emerging-technologies-vision-summit",
     title: "Emerging Technologies Vision Summit",
     description: "Led strategic UX research and facilitated 3-day leadership workshop to help define how emerging technologies (agentic, generative, voice AI etc.) should be integrated into customer and associate loss reporting claims experiences that connect core drivers of customer satisfaction and maximize operational efficiency for the enterprise.",
+    image: "/sky.jpeg",
     role: "Lead UX Researcher",
     duration: "3 days",
     team: "20 leaders representing four main departments spanning Enterprise Technology, Claims Business, Claims Process, and Enterprise Research.",
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     id: "associate-customer-fire-claims-experience",
     title: "Fire Claims Digital Modernization: Multi-Product Ecosystem Integration",
     description: "Leading end-to-end UX research for the enterprise-wide modernization of Fire claims digital experiences. This ongoing initiative supports multiple product teams as they transition from legacy systems to integrated modern applications while maintaining operational efficiency and associate productivity. Research focuses on evaluating workflows across customer-facing and associate-facing digital tools, ensuring human-centered design principles guide the integration of vendor solutions and internal platforms. The work balances documented user needs with business objectives, helping teams navigate the complexity of modernizing a high-stakes, time-sensitive claims operation without disrupting service delivery.",
+    image: "/tree.jpeg",
     role: "Lead UX Researcher, Fire Claims Program",
     duration: "Ongoing (aligned to 2-week agile sprints)",
     team: "Claims Business, Fire Claims Process, Fire Experience Design, Fire Product Management, Customer Insights Measurement, Organizational Insights, Associate Experience, Agency teams",
@@ -75,6 +78,7 @@ export const projects: Project[] = [
     id: "auto-claims-digital-modernization",
     title: "Auto Claims Digital Experience Modernization",
     description: "Led a digital experience modernization initiative over 6 months that unified seven cross-functional teams hosting web, mobile app, and call channel experiences to a shared vision for auto claims customer interactions. At the start of the project, few customers were completing loss filing and self-service behaviors in digital channels, ultimately leading to higher operational cost overall and decreased associate satisfaction scores and completion rates for claims tasks. Over the course of the project, I coordinated multiple research studies to understand how end-users make decisions under stress, which design proposals were viable and would deliver the highest value in terms of customer satisfaction and core business outcomes. The resulting hybrid solution aligned with Consulting & Legal requirements, was responsive to real customer needs, provided consistency across web and app experiences, alleviated associate workload, and effectively modernized the end-to-end journey for auto claims customers seeking to self-serve.",
+    image: "/cactus.jpeg",
     role: "Lead UX Researcher",
     duration: "6 months (discovery through launch)",
     team: "Product Management, Experience Design, Organizational Insights, Consulting & Legal, Claims Process Engineering, Claims Business, Customer Insights Measurement",

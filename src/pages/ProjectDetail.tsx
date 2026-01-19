@@ -78,9 +78,18 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
         </div>
 
         {/* Project Image */}
-        {!!project.image && (
+        {project.image && (
           <div className="mb-12">
-            <div className="h-64 lg:h-96 bg-gradient-to-br from-terracotta-100 to-terracotta-200 rounded-xl"></div>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-64 lg:h-96 w-full object-cover rounded-xl"
+            />
+            {project.imageDescription && (
+              <div className="px-4 py-2">
+                <p className="text-sm text-terracotta-600 text-right">{project.imageDescription}</p>
+              </div>
+            )}
           </div>
         )}
 
