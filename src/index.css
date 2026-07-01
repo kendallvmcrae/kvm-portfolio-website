@@ -3,8 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --color-light: #ffffff;
-  --color-dark: #171717;
+  --color-dark: #2C2825;
+}
+
+html {
+  /*
+    Background = Fibonacci spiral pools (radial) layered over the horizon gradient (linear).
+    Pool positions follow the golden angle (137.508°) with radius proportional to √n.
+    Each pool is semi-transparent so they tint rather than overpower.
+    Sizes loosely follow Fibonacci proportions (34, 38, 42, 47, 52, 58, 63, 68, 73, 79%).
+  */
+  background:
+    /* n=1  pos: 31% 67%  — Dry Meadow sage */
+    /* n=1  pos: 31% 67%  — Dry Meadow sage */
+    radial-gradient(ellipse 28% 22% at 31% 67%, rgba(150,168,130,0.45) 0%, transparent 100%),
+    /* n=2  pos: 53% 15%  — Dusk Mauve lavender */
+    radial-gradient(ellipse 32% 26% at 53% 15%, rgba(184,170,187,0.50) 0%, transparent 100%),
+    /* n=3  pos: 76% 84%  — Canopy deep green */
+    radial-gradient(ellipse 30% 24% at 76% 84%, rgba(74,103,65,0.42) 0%, transparent 100%),
+    /* n=4  pos:  1% 41%  — Coastal Blue (bleeds in from left edge) */
+    radial-gradient(ellipse 34% 28% at 1%  41%, rgba(106,138,158,0.45) 0%, transparent 100%),
+    /* n=5  pos: 97% 20%  — Rose Mist blush */
+    radial-gradient(ellipse 36% 28% at 97% 20%, rgba(212,160,160,0.48) 0%, transparent 100%),
+    /* n=6  pos: 34% 110% — Forest Dark (bleeds up from bottom) */
+    radial-gradient(ellipse 40% 32% at 34% 110%, rgba(42,61,46,0.42) 0%, transparent 100%),
+    /* n=7  pos: 20%  -9% — Apricot Glow (bleeds down from top) */
+    radial-gradient(ellipse 34% 26% at 20% -9%,  rgba(239,168,130,0.50) 0%, transparent 100%),
+    /* n=8  pos:-19% 79%  — Coastal Blue (bleeds in from left) */
+    radial-gradient(ellipse 40% 32% at -19% 79%, rgba(106,138,158,0.40) 0%, transparent 100%),
+    /* n=9  pos: 83% -22% — Pale Dusk (bleeds down from top right) */
+    radial-gradient(ellipse 44% 34% at 83% -22%, rgba(232,232,240,0.45) 0%, transparent 100%),
+    /* n=10 pos: 54% 96%  — Bark Brown earth anchor */
+    radial-gradient(ellipse 30% 24% at 54% 96%, rgba(107,74,52,0.40) 0%, transparent 100%),
+    /* Base horizon: sky (lavender/peach/gold) → earth (sage/meadow/canopy) */
+    linear-gradient(to bottom,
+      #E4E2EE  0%,
+      #D4CEDC 10%,
+      #EAC8C0 20%,
+      #F0C4A4 27%,
+      #F2D0A8 34%,
+      #F4DEB0 40%,
+      #F5ECC4 48%,
+      #F7F4F0 58%,
+      #EDE8E2 70%,
+      #D4DFC8 80%,
+      #B8CCAA 88%,
+      #96A882 94%,
+      #7A9470 100%
+    );
+  background-attachment: fixed;
+  min-height: 100%;
 }
 
 body {
@@ -25,7 +73,7 @@ body {
     "Segoe UI Symbol",
     "Noto Color Emoji";
   color: var(--color-dark);
-  background: var(--color-light);
+  background: transparent;
 }
 
 /* Utility classes */
@@ -42,14 +90,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #E8EEE0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cc6d41;
+  background: #4A6741;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #aa5637;
+  background: #2A3D2E;
 }

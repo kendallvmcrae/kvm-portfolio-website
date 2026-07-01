@@ -19,7 +19,7 @@ export function About() {
     "ChatGPT", 
     "QualtricsXM",
     "IBM SPSS Statistics", 
-    "In-Dept Interviews", 
+    "In-Depth Interviews",
     "Ethnographic Research", 
     "Multicultural Research", 
     "Omnichannel System Research", 
@@ -36,16 +36,16 @@ export function About() {
           <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-6">
             About Me
           </h1>
-          <p className="text-xl text-stone-600">
+          <p className="text-xl text-stone-800">
             Passionate about nurturing the relationship between humanity and technology with meaningful interactions
           </p>
         </div>
 
         {/* Bio Section */}
         <div className="mb-16">
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-stone-900 mb-6">My Story</h2>
-            <div className="prose prose-lg text-stone-600 space-y-4">
+            <div className="prose prose-lg text-stone-800 space-y-4">
               <p>
                 I have a lush background in UX Research beginning in startup environments and ending in a fortune 50 enterprise. I got my bachelor's degree in Industrial Systems Engineering where I gained in-depth subject matter expertise from the Georgia Institute of Technology on supply chain, management, computer science, and financial systems and decided to follow my passion for quality human experience at the university of southern california where I attended their Masters of Applied Psychology with a User Experience Research concentration in 2018. Since graduating I am thrilled to have had the opportunity to  work in a variety of environments with diverse range of individuals where I had the privilege of working as a single User Experience Researcher and a member of larger teams in Enterprise Settings. Over the last 5 years I've gained the most experience working on modernizing large-scale, multi-user omnichannel end-to-end experiences in purchasing and high-stress auto and Fire claims experiences.
               </p>
@@ -69,7 +69,7 @@ export function About() {
             {skills.map((skill) => (
               <div
                 key={skill}
-                className="bg-terracotta-50 text-terracotta-700 px-4 py-3 rounded-lg text-center flex items-center justify-center font-medium"
+                className="bg-stone-mist text-stone-800 px-4 py-3 rounded-lg text-center flex items-center justify-center font-medium"
               >
                 {skill}
               </div>
@@ -79,35 +79,35 @@ export function About() {
 
         {/* Education & Experience */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
             <h3 className="text-xl font-bold text-stone-900 mb-6">Education</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold text-stone-900">M.S. Applied Psychology</h4>
-                <p className="text-stone-600">Concentration in User Experience Research</p>
-                <p className="text-stone-600">University of Southern California, 2021</p>
+                <p className="text-stone-800">Concentration in User Experience Research</p>
+                <p className="text-stone-800">University of Southern California, 2021</p>
               </div>
               <div>
                 <h4 className="font-semibold text-stone-900">B.S. Industrial Engineering</h4>
-                <p className="text-stone-600">Georgia Institute of Technology, 2018</p>
+                <p className="text-stone-800">Georgia Institute of Technology, 2018</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
             <h3 className="text-xl font-bold text-stone-900 mb-6">Experience</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold text-stone-900">Advanced UX Researcher</h4>
-                <p className="text-stone-600">State Farm Insurance Co., 2021 - Present</p>
+                <p className="text-stone-800">State Farm Insurance Co., 2021 - Present</p>
               </div>
               <div>
                 <h4 className="font-semibold text-stone-900">Lead UX Researcher</h4>
-                <p className="text-stone-600">Peak Artificial Intelligence, 2021</p>
+                <p className="text-stone-800">Peak Artificial Intelligence, 2021</p>
               </div>
               <div>
                 <h4 className="font-semibold text-stone-900">Co-Founder & Principal Product Development Researcher</h4>
-                <p className="text-stone-600">VAILS Virtual Nails Corporation, 2018 - 2019</p>
+                <p className="text-stone-800">VAILS Virtual Nails Corporation, 2018 - 2019</p>
               </div>
             </div>
           </div>
