@@ -15,7 +15,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           <h1 className="text-2xl font-bold text-stone-900 mb-4">Project Not Found</h1>
           <button
             onClick={() => onNavigate("work")}
-            className="px-6 py-2 bg-terracotta-600 text-white rounded-lg hover:bg-terracotta-700 transition-colors"
+            className="px-6 py-2 bg-basalt text-white rounded-lg hover:bg-[#A8832A] transition-colors"
           >
             Back to Work
           </button>
@@ -24,8 +24,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
     );
   }
 
-  // Handle methods field - it can be either string or array
-  const methodsList = Array.isArray(project.methods) ? project.methods : [project.methods];
+  const methodsList = project.methods;
 
   return (
     <div className="py-16 lg:py-24">
@@ -33,7 +32,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
         {/* Back Button */}
         <button
           onClick={() => onNavigate("work")}
-          className="flex items-center text-terracotta-600 hover:text-terracotta-700 mb-8 transition-colors"
+          className="flex items-center text-basalt hover:text-[#A8832A] mb-8 transition-colors"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -46,21 +45,21 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-4">
             {project.title}
           </h1>
-          <p className="text-xl text-stone-600 mb-6">
+          <p className="text-xl text-stone-800 mb-6">
             {project.description}
           </p>
 
           <div className="flex flex-wrap gap-4 mb-6">
             <div className="bg-stone-100 px-4 py-2 rounded-lg">
-              <span className="text-sm font-medium text-stone-600">Role:</span>
+              <span className="text-sm font-medium text-stone-800">Role:</span>
               <span className="ml-2 text-stone-900">{project.role}</span>
             </div>
             <div className="bg-stone-100 px-4 py-2 rounded-lg">
-              <span className="text-sm font-medium text-stone-600">Duration:</span>
+              <span className="text-sm font-medium text-stone-800">Duration:</span>
               <span className="ml-2 text-stone-900">{project.duration}</span>
             </div>
             <div className="bg-stone-100 px-4 py-2 rounded-lg">
-              <span className="text-sm font-medium text-stone-600">Team:</span>
+              <span className="text-sm font-medium text-stone-800">Team:</span>
               <span className="ml-2 text-stone-900">{project.team}</span>
             </div>
           </div>
@@ -69,7 +68,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-terracotta-100 text-terracotta-700 text-sm rounded-full"
+                className="px-3 py-1 bg-stone-mist text-stone-800 text-sm rounded-full"
               >
                 {tag}
               </span>
@@ -87,7 +86,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
             />
             {project.imageDescription && (
               <div className="px-4 py-2">
-                <p className="text-sm text-terracotta-600 text-right">{project.imageDescription}</p>
+                <p className="text-sm text-chestnut text-right">{project.imageDescription}</p>
               </div>
             )}
           </div>
@@ -95,52 +94,38 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
 
         {/* Project Content */}
         <div className="prose prose-lg max-w-none">
-          <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
             <h2 className="text-2xl font-bold text-stone-900 mb-4">Challenge</h2>
-            <p className="text-stone-600">
-              {project.challenge}
-            </p>
+            <p className="text-stone-800">{project.challenge}</p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
             <h2 className="text-2xl font-bold text-stone-900 mb-4">Approach</h2>
-            <p className="text-stone-600 mb-4">
-              {project.approach}
-            </p>
-            {methodsList.length > 0 && methodsList[0] && (
+            <p className="text-stone-800 mb-4">{project.approach}</p>
+            {methodsList.length > 0 && (
               <div>
                 <h3 className="text-lg font-semibold text-stone-900 mb-2">Methods:</h3>
-                {Array.isArray(project.methods) ? (
-                  <ul className="list-disc list-inside text-stone-600 space-y-2">
-                    {methodsList.map((method, index) => (
-                      <li key={index}>{method}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-stone-600">{project.methods}</p>
-                )}
+                <ul className="list-disc list-inside text-stone-800 space-y-2">
+                  {methodsList.map((method, index) => (
+                    <li key={index}>{method}</li>
+                  ))}
+                </ul>
               </div>
             )}
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
             <h2 className="text-2xl font-bold text-stone-900 mb-4">Key Insights</h2>
-            {Array.isArray(project.insights) ? (
-              <ul className="list-disc list-inside text-stone-600 space-y-2">
-                {project.insights.map((insight, index) => (
-                  <li key={index}>{insight}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-stone-600">{project.insights}</p>
-            )}
+            <ul className="list-disc list-inside text-stone-800 space-y-2">
+              {project.insights.map((insight, index) => (
+                <li key={index}>{insight}</li>
+              ))}
+            </ul>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-stone-900 mb-4">Impact</h2>
-            <p className="text-stone-600">
-              {project.impact}
-            </p>
+            <p className="text-stone-800">{project.impact}</p>
           </div>
         </div>
       </div>

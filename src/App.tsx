@@ -73,12 +73,11 @@ function AppContent() {
   };
 
   const handleViewProject = (projectId: string) => {
-    console.log('Navigating to project:', projectId);
     navigate(`/project/${projectId}`);
   };
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen">
       <Navigation currentPage={getCurrentPage()} onNavigate={handleNavigate} />
       <main>
         <Routes>

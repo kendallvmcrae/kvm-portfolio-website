@@ -7,7 +7,6 @@ interface WorkProps {
 
 export function Work({ onViewProject, onNavigate }: WorkProps) {
   const handleViewProject = (projectId: string) => {
-    console.log('Work page - handleViewProject called with:', projectId);
     onViewProject(projectId);
   };
 
@@ -19,7 +18,7 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
           <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-6">
             My Work
           </h1>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+          <p className="text-xl text-stone-800 max-w-3xl mx-auto">
             A collection of relevant projects that demonstrate my
             research philosophy and approach to solving complex challenges in a variety of ecosystems.
           </p>
@@ -30,7 +29,7 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-white/75 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
               onClick={() => handleViewProject(project.id)}
             >
               {project.image ? (
@@ -40,20 +39,20 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
                   className="h-48 w-full object-cover"
                 />
               ) : (
-                <div className="h-48 bg-gradient-to-br from-terracotta-100 to-terracotta-200"></div>
+                <div className="h-48 bg-stone-mist"></div>
               )}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-stone-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-stone-600 mb-4 line-clamp-3">
+                <p className="text-stone-800 mb-4 line-clamp-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-terracotta-100 text-terracotta-700 text-sm rounded-full"
+                      className="px-3 py-1 bg-stone-mist text-stone-800 text-sm rounded-full"
                     >
                       {tag}
                     </span>
