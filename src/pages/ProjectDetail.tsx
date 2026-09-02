@@ -42,6 +42,9 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
 
         {/* Project Header */}
         <div className="mb-12">
+          <p className="text-sm font-semibold uppercase tracking-wide text-terracotta-600 mb-3">
+            {project.industry} · {project.userType} · {project.date}
+          </p>
           <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-4">
             {project.title}
           </h1>

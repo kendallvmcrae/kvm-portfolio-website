@@ -42,6 +42,9 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
                 <div className="h-48 bg-stone-mist"></div>
               )}
               <div className="p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-terracotta-600 mb-2">
+                  {project.industry} · {project.userType} · {project.date}
+                </p>
                 <h3 className="text-xl font-semibold text-stone-900 mb-2">
                   {project.title}
                 </h3>
