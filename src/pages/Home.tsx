@@ -72,18 +72,18 @@ export function Home({ onNavigate, onViewProject }: HomeProps) {
                 {project.image ? (
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.imageDescription ?? project.title}
                     className="h-48 w-full object-cover"
                   />
                 ) : (
-                  <div className="h-48 bg-stone-mist"></div>
+                  <div className="h-48 bg-gradient-to-br from-stone-sand via-stone-mist to-meadow/25"></div>
                 )}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-stone-900 mb-2">
                     {project.title}
                   </h3>
                   <p className="text-stone-800 mb-4 line-clamp-3">
-                    {project.description}
+                    {project.summary}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 2).map((tag) => (

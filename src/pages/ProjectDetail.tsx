@@ -42,12 +42,12 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
 
         {/* Project Header */}
         <div className="mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wide text-terracotta-600 mb-3">
-            {project.industry} · {project.userType} · {project.date}
-          </p>
-          <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-stone-900 mb-2">
             {project.title}
           </h1>
+          <p className="text-sm text-canopy mb-4">
+            {project.industry} · {project.userType} · {project.date}
+          </p>
           <p className="text-xl text-stone-800 mb-6">
             {project.description}
           </p>
@@ -84,7 +84,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           <div className="mb-12">
             <img
               src={project.image}
-              alt={project.title}
+              alt={project.imageDescription ?? project.title}
               className="h-64 lg:h-96 w-full object-cover rounded-xl"
             />
             {project.imageDescription && (
