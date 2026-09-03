@@ -17,7 +17,7 @@ export function Contact() {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <a
             href="mailto:kendallvmcrae@gmail.com"
-            className="bg-white/75 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow group"
+            className="bg-stone-mist border border-stone-300 rounded-lg p-6 sm:p-8 hover:shadow-md hover:border-terracotta-bluff/60 transition-all group"
           >
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-stone-mist rounded-lg flex items-center justify-center mr-4">
@@ -41,7 +41,7 @@ export function Contact() {
             href="https://www.linkedin.com/in/kendallvictoriam/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/75 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow group"
+            className="bg-stone-mist border border-stone-300 rounded-lg p-6 sm:p-8 hover:shadow-md hover:border-terracotta-bluff/60 transition-all group"
           >
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-stone-mist rounded-lg flex items-center justify-center mr-4">
@@ -63,7 +63,7 @@ export function Contact() {
         </div>
 
         {/* Additional Info */}
-        <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 text-center">
+        <div className="bg-stone-mist border border-stone-300 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-stone-900 mb-4">
             Open to New Opportunities
           </h2>
@@ -73,13 +73,13 @@ export function Contact() {
             on an exciting project, I'd love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <span className="px-4 py-2 bg-white/80 text-stone-700 rounded-lg font-medium">
+            <span className="px-4 py-2 bg-white border border-stone-300 text-stone-700 rounded-lg font-medium">
               Available for Full-time Roles
             </span>
-            <span className="px-4 py-2 bg-white/80 text-stone-700 rounded-lg font-medium">
+            <span className="px-4 py-2 bg-white border border-stone-300 text-stone-700 rounded-lg font-medium">
               Open to Consulting
             </span>
-            <span className="px-4 py-2 bg-white/80 text-stone-700 rounded-lg font-medium">
+            <span className="px-4 py-2 bg-white border border-stone-300 text-stone-700 rounded-lg font-medium">
               Remote Friendly
             </span>
           </div>

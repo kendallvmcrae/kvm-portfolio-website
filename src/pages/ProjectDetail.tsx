@@ -94,7 +94,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
             <img
               src={project.image}
               alt={project.imageDescription ?? project.title}
-              className="h-64 lg:h-96 w-full object-cover rounded-xl"
+              className="h-64 lg:h-96 w-full object-cover rounded-lg"
             />
             {project.imageDescription && (
               <div className="px-4 py-2">
@@ -104,15 +104,17 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           </div>
         )}
 
-        {/* Project Content */}
+        {/* Project Content — structured as case-study phases */}
         <div className="prose prose-lg max-w-none">
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">Challenge</h2>
+          <div className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg p-8 mb-8">
+            <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">Phase 01 &middot; Discovery</p>
+            <h2 className="text-2xl font-semibold text-stone-900 mb-4">Challenge</h2>
             <p className="text-stone-800">{project.challenge}</p>
           </div>
 
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">Approach</h2>
+          <div className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg p-8 mb-8">
+            <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">Phase 02 &middot; Strategy</p>
+            <h2 className="text-2xl font-semibold text-stone-900 mb-4">Approach</h2>
             <p className="text-stone-800 mb-4">{project.approach}</p>
             {methodsList.length > 0 && (
               <div>
@@ -127,14 +129,16 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           </div>
 
           {framework && (
-            <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">{framework.title}</h2>
+            <div className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg p-8 mb-8">
+              <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">Phase 02 &middot; Strategy</p>
+              <h2 className="text-2xl font-semibold text-stone-900 mb-4">{framework.title}</h2>
               <framework.Component />
             </div>
           )}
 
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">Key Insights</h2>
+          <div className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg p-8 mb-8">
+            <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">Phase 03 &middot; Impact</p>
+            <h2 className="text-2xl font-semibold text-stone-900 mb-4">Key Insights</h2>
             <ul className="list-disc list-inside text-stone-800 space-y-2">
               {project.insights.map((insight, index) => (
                 <li key={index}>{insight}</li>
@@ -142,8 +146,9 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
             </ul>
           </div>
 
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">Impact</h2>
+          <div className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg p-8">
+            <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">Phase 03 &middot; Impact</p>
+            <h2 className="text-2xl font-semibold text-stone-900 mb-4">Impact</h2>
             <p className="text-stone-800">{project.impact}</p>
           </div>
         </div>

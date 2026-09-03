@@ -43,7 +43,7 @@ export function About() {
 
         {/* Bio Section */}
         <div className="mb-16">
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
+          <div className="bg-stone-mist border border-stone-300 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-stone-900 mb-6">My Story</h2>
             <div className="prose prose-lg text-stone-800 space-y-4">
               <p>
@@ -79,7 +79,7 @@ export function About() {
 
         {/* Education & Experience */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
+          <div className="bg-stone-mist border border-stone-300 rounded-lg p-8">
             <h3 className="text-xl font-bold text-stone-900 mb-6">Education</h3>
             <div className="space-y-4">
               <div>
@@ -94,7 +94,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm">
+          <div className="bg-stone-mist border border-stone-300 rounded-lg p-8">
             <h3 className="text-xl font-bold text-stone-900 mb-6">Experience</h3>
             <div className="space-y-4">
               <div>

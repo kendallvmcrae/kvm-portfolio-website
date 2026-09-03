@@ -14,7 +14,12 @@ html {
     Sizes loosely follow Fibonacci proportions (34, 38, 42, 47, 52, 58, 63, 68, 73, 79%).
   */
   background:
-    /* n=1  pos: 31% 67%  — Dry Meadow sage */
+    /*
+      Readability scrim — the palette below stays exactly as designed, but sits behind a
+      light wash so body copy is never fighting a saturated band. Components that want
+      emphasis punch back through it with .emphasis-wash (see below).
+    */
+    linear-gradient(rgba(250, 249, 247, 0.72), rgba(250, 249, 247, 0.72)),
     /* n=1  pos: 31% 67%  — Dry Meadow sage */
     radial-gradient(ellipse 28% 22% at 31% 67%, rgba(150,168,130,0.45) 0%, transparent 100%),
     /* n=2  pos: 53% 15%  — Dusk Mauve lavender */
@@ -57,7 +62,8 @@ html {
 
 body {
   font-family:
-    "Inter Variable",
+    "Mona Sans Variable",
+    "Mona Sans",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -74,6 +80,61 @@ body {
     "Noto Color Emoji";
   color: var(--color-dark);
   background: transparent;
+}
+
+/* Display type — Mona Sans at medium weight with tight tracking, matching Studio's setting */
+@layer base {
+  h1, h2, h3 {
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+}
+
+/*
+  Emphasis wash — lets a component pull the palette back up through the page scrim.
+  Use on a `relative` container to give it a saturated halo of its own.
+*/
+.emphasis-wash {
+  position: relative;
+}
+.emphasis-wash::before {
+  content: "";
+  position: absolute;
+  inset: -10% -6%;
+  z-index: -1;
+  border-radius: 1.5rem;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(196, 98, 45, 0.16) 0%,
+    rgba(150, 168, 130, 0.14) 45%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 500ms ease;
+  pointer-events: none;
+}
+.emphasis-wash:hover::before,
+.emphasis-wash:focus-within::before,
+.emphasis-wash.is-emphasized::before {
+  opacity: 1;
+}
+
+/* Fern colony mark — leaflet/rachis/bark transitions for FernColony.tsx */
+.fern-leaflet {
+  transition: transform 900ms cubic-bezier(0.32, 0.7, 0.24, 1), fill 900ms ease;
+  transform-origin: 0px 0px;
+}
+.fern-rachis {
+  transition: opacity 900ms ease;
+}
+.fern-bark {
+  transition: fill 1200ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fern-leaflet, .fern-rachis {
+    transition: none;
+  }
 }
 
 /* Utility classes */

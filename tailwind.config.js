@@ -117,8 +117,10 @@ export default {
 
       // ── Typography ──────────────────────────────────────────────────────────
       fontFamily: {
+        // Mona Sans carries the whole site — headings and body — the way Studio uses it.
         sans: [
-          'Inter Variable',
+          'Mona Sans Variable',
+          'Mona Sans',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
@@ -127,8 +129,13 @@ export default {
           'Roboto',
           'Helvetica Neue',
           'Arial',
-          'Noto Sans',
           'sans-serif',
+        ],
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'monospace',
         ],
       },
 

@@ -29,7 +29,7 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white/75 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer flex flex-col h-full"
+              className="bg-stone-mist border border-stone-300 border-t-[3px] border-t-terracotta-bluff rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer flex flex-col h-full"
               onClick={() => handleViewProject(project.id)}
             >
               {project.image ? (
@@ -42,12 +42,12 @@ export function Work({ onViewProject, onNavigate }: WorkProps) {
                 <div className="h-48 bg-gradient-to-br from-stone-sand via-stone-mist to-meadow/25"></div>
               )}
               <div className="p-6 flex flex-col flex-1">
-                <h2 className="text-xl font-semibold text-stone-900 mb-1">
+                <p className="text-xs uppercase tracking-[0.14em] text-terracotta-bluff mb-2">
+                  {project.industry} &middot; {project.userType} &middot; {project.date}
+                </p>
+                <h2 className="text-xl font-semibold text-stone-900 mb-3">
                   {project.title}
                 </h2>
-                <p className="text-xs text-canopy mb-3">
-                  {project.industry} · {project.userType} · {project.date}
-                </p>
                 <p className="text-stone-800 mb-3 line-clamp-4">
                   {project.summary}
                 </p>
