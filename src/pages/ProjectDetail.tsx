@@ -1,9 +1,11 @@
 import type { ComponentType } from "react";
 import { projects } from "../data/projects";
 import { ClaimCraftFrameworkDiagram } from "../components/diagrams/ClaimCraftFrameworkDiagram";
+import { VailsJourneyDiagram } from "../components/diagrams/VailsJourneyDiagram";
 
-const frameworkDiagrams: Record<string, ComponentType> = {
-  "emerging-technologies-vision-summit": ClaimCraftFrameworkDiagram,
+const frameworkDiagrams: Record<string, { title: string; Component: ComponentType }> = {
+  "emerging-technologies-vision-summit": { title: "Framework", Component: ClaimCraftFrameworkDiagram },
+  "vails-virtual-nails": { title: "Customer Journey Map", Component: VailsJourneyDiagram },
 };
 
 interface ProjectDetailProps {
@@ -31,7 +33,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
   }
 
   const methodsList = project.methods;
-  const FrameworkDiagram = frameworkDiagrams[project.id];
+  const framework = frameworkDiagrams[project.id];
 
   return (
     <div className="py-16 lg:py-24">
@@ -124,10 +126,10 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
             )}
           </div>
 
-          {FrameworkDiagram && (
+          {framework && (
             <div className="bg-white/75 backdrop-blur-sm rounded-xl p-8 shadow-sm mb-8">
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">Framework</h2>
-              <FrameworkDiagram />
+              <h2 className="text-2xl font-bold text-stone-900 mb-4">{framework.title}</h2>
+              <framework.Component />
             </div>
           )}
 
