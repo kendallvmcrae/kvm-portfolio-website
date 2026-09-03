@@ -25,16 +25,18 @@ npm run lint      # TypeScript check + Convex function check + build
 ```
 src/
   pages/          # Home, About, Work, ProjectDetail, Contact
-  components/     # Navigation only
+  components/     # Navigation, plus components/diagrams/ for bespoke per-project visual diagrams (see Architecture)
   data/projects.ts  # all project content — the only "database"
   index.css       # Tailwind directives + scrollbar + font setup
-public/           # static images (cactus.jpeg, sky.jpeg, tree.jpeg)
+public/           # static images (cactus.jpeg, sky.jpeg, tree.jpeg, vails-homepage.jpg, ...)
 convex/           # backend scaffold — auth tables only, no app logic
 ```
 
 ## Architecture
 
 **All content is hardcoded.** Project data (titles, descriptions, methods, impact, image paths) lives in `src/data/projects.ts` as a typed array. To add or edit a project, edit that file. Images go in `public/`.
+
+**Bespoke project diagrams:** A few projects have a hand-built visual diagram (e.g., a framework schematic or customer journey map) shown in a "Framework" section on their detail page. Each diagram is its own component under `src/components/diagrams/`, registered by project `id` in the `frameworkDiagrams` map in `src/pages/ProjectDetail.tsx` — kept out of `projects.ts` so that file stays plain data. Add a new diagram by creating a component there and adding an entry to that map.
 
 **Routing:** React Router v6 with a prop-drilling pattern. Pages receive `onNavigate(page: string)` and `onViewProject(projectId: string)` callbacks from `App.tsx` rather than using `<Link>` directly. All routing logic centralizes in `AppContent` in `App.tsx`.
 
